@@ -1,10 +1,13 @@
 package src.talento.a2020.m02.d11;
 
+import java.util.Scanner;
+
 public class Persona {
 	
 	String sNombre,sRut, sexo;
 	int iEdad; 
 	double peso, altura;
+	Scanner scan = new Scanner(System.in);
 
 	public Persona() {
 		
@@ -75,7 +78,66 @@ public class Persona {
 		this.altura = altura;
 	}
 
+	public int esMayorDeEdad() {
+		System.out.println("Ingrese su edad");
+		int edad = scan.nextInt();
+		
+		if(edad >= 18) {
+			return 1;
+		} 
+		return 0;
+		
+	}
+	public void comprobarSexo(char[] cs) {
 
+		String sSexo ="H";
+		if(cs.toString().toUpperCase().equals("M")) {
+			 sSexo ="M";
+		}
+	}
+	
+	public void calcularIMC(double peso, double altura) {
+		
+		double imc = (peso/(altura*altura));
+		
+		System.out.println("Su IMC es : "+ imc);
+		
+		int indiceMC= nivelIMC(imc);
+		
+		switch (indiceMC) {
+		case -1:
+			System.out.println(", Se encuentra bajo de peso");
+			break;
+		case 0:
+			System.out.println(", Su peso es Normal");
+			break;
+		case 1:
+			System.out.println(", Tiene sobre peso");
+			break;
+		default:
+			break;
+		}
+	}
+	
+	private int nivelIMC(double imc) {
+		
+		if(imc < 20  ) {
+			return -1;
+		}else if(imc >= 20 && imc <= 25) {
+			return 0;
+		}else if(imc > 25) {
+			return 1;
+		}
+				
+		return 0;
+	}
+
+	
+	@Override
+	public String toString() {
+		return "Persona [sNombre=" + sNombre + ", sRut=" + sRut + ", sexo=" + sexo + ", iEdad=" + iEdad + ", peso="
+				+ peso + ", altura=" + altura + "]";
+	}
 
 
 
