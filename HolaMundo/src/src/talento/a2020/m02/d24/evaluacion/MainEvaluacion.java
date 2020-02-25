@@ -52,7 +52,8 @@ public class MainEvaluacion {
         System.out.println();
         System.out.println("Suma Total de las televisiones: $"+dTotalSumaTelevisiones);
         System.out.println("*************************************************");
-   
+      
+        
     }
 
 }

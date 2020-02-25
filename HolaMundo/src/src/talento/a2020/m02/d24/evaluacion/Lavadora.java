@@ -42,12 +42,12 @@ public class Lavadora extends Electrodomestico{
 
 	public Lavadora(double dPrecio, double dPeso, char cConsumoEnergetico, String sColor) {
 		super(dPrecio, dPeso, cConsumoEnergetico, sColor);
-		// TODO Auto-generated constructor stub
+		this.inCarga =IN_CONST_CARGA;
 	}
 
 	public Lavadora(double dPrecio, double dPeso) {
 		super(dPrecio, dPeso);
-		// TODO Auto-generated constructor stub
+		this.inCarga =IN_CONST_CARGA;
 	}
 	public Lavadora(double dPrecio, double dPeso,int inCarga) {
 		super(dPrecio, dPeso);

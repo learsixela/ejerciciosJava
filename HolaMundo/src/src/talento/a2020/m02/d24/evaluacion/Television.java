@@ -16,19 +16,22 @@ public class Television extends Electrodomestico{
   //Constructores
 	public Television() {
 		super();
-		// TODO Auto-generated constructor stub
+		this.inResolucion = 20;
+		this.bSintonizadorTDT = false;
 	}
 
 
 	public Television(double dPrecio, double dPeso, char cConsumoEnergetico, String sColor) {
 		super(dPrecio, dPeso, cConsumoEnergetico, sColor);
-		// TODO Auto-generated constructor stub
+		this.inResolucion = 20;
+		this.bSintonizadorTDT = false;
 	}
 
 
 	public Television(double dPrecio, double dPeso) {
 		super(dPrecio, dPeso);
-		// TODO Auto-generated constructor stub
+		this.inResolucion = 20;
+		this.bSintonizadorTDT = false;
 	}
 
 	public Television(int inResolucion, boolean bSintonizadorTDT) {
