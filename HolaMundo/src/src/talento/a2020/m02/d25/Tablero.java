@@ -3,6 +3,8 @@
  */
 package src.talento.a2020.m02.d25;
 
+import java.util.ArrayList;
+
 /**
  * @author israelpalma
  *
@@ -11,15 +13,11 @@ public class Tablero {
 
 	Integer tamCarro=18;
 	Carro arregloCarro[] = new Carro[tamCarro];
+	ArrayList<Carro> arregloCarros= new ArrayList<Carro>();
 	Integer iPuntajeTotal=0;
 	
 	int fila=15, columna=15;
 	String matriz[][] = new String [fila][columna];
-	
-
-	//k3 Col 		[0-12]
-	//c2 fil 		[0-13]
-	//t1 fil,col 	[0-14]
 	
 	public void matrizTablero() {
 		
@@ -77,7 +75,6 @@ public class Tablero {
 		System.out.println("El puntaje total es:"+ iPuntajeTotal);
 		
 	}
-
 	private Integer obtenerImpactoCaguano(int inFilaHuevo, int inColHuevo) {
 		int inSumaAcierto=0;
 		switch (inColHuevo) {
@@ -110,11 +107,14 @@ public class Tablero {
 		}
 		return 0;
 	}
-
 	public void llenarMatrizKromis() {
+		
 		boolean bCondition1 = true;
 		int iContadorKromi =0; 
 		do {
+			//Carro oKromi = new Kromi();
+			//System.out.println("okromi() "+oKromi.getiCantOcupantes());
+			
 			int inFilaRandomKromi = (int) (Math.random()*12)+0;
 			int inColRandomKromi = (int) (Math.random()*14)+0;
 			
@@ -124,16 +124,19 @@ public class Tablero {
 					matriz [inFilaRandomKromi][inColRandomKromi] = "K";
 					matriz [inFilaRandomKromi+1][inColRandomKromi] = "K";
 					matriz [inFilaRandomKromi+2][inColRandomKromi] = "K";
+					//oKromi.setiFila(inFilaRandomKromi);
+					//oKromi.setiColumna(inColRandomKromi);
 					iContadorKromi= iContadorKromi+1;
 				}
 			}
+			//arregloCarros.add(oKromi);
+			
 			if(iContadorKromi==3) {
 				bCondition1 =false;
 			}
 			
 		} while (bCondition1);		
 	}
-	
 	public void llenarMatrizCaguano() {
 		boolean condition2 = true;
 		int iContadorC =0; 

@@ -4,13 +4,14 @@
 package src.talento.a2020.m02.d25;
 
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  * @author israelpalma
  *
  */
 public class Caguano extends Carro{
-	
+	Scanner scan = new Scanner(System.in);
 	Integer iTiro=0;
 	String sColor;
 	public Caguano() {
@@ -37,6 +38,13 @@ public class Caguano extends Carro{
 	}
 	public void setsColor(String sColor) {
 		this.sColor = sColor;
+	}
+	
+	public void agregarParametros() {
+		System.out.println("Ingrese tiro");
+		this.iTiro= scan.nextInt();
+		System.out.println("Ingrese Color");
+		this.sColor= scan.nextLine();
 	}
 	
 	
